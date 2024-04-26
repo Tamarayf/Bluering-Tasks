@@ -44,15 +44,21 @@ public class UsersController {
         return usersService.getUsers();
     }
 
+//    @GetMapping("/{userId}")
+//    public Apiresponse getOneUser(@PathVariable Integer userId) {
+//        UsersDTO userDTO = usersService.getOneUser(userId);
+//        if (userDTO != null) {
+//            return new Apiresponse(true, "User found", userDTO);
+//        } else {
+//            return new Apiresponse(false, "User not found", null);
+//        }
+//    }
+
     @GetMapping("/{userId}")
-    public Apiresponse getOneUser(@PathVariable Integer userId) {
-        UsersDTO userDTO = usersService.getOneUser(userId);
-        if (userDTO != null) {
-            return new Apiresponse(true, "User found", userDTO);
-        } else {
-            return new Apiresponse(false, "User not found", null);
-        }
+    public UsersDTO getOneUser(@PathVariable Integer userId) {
+        return usersService.getOneUser(userId);
     }
+
 
 
     @DeleteMapping("/{userId}")
