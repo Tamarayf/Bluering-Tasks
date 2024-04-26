@@ -1,3 +1,3 @@
 # TaskB
 
-this is a repositery for the bluering company backend tasks 
+this is a repository for the bluering company backend tasks 
