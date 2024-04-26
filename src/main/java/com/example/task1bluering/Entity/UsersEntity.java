@@ -1,32 +1,24 @@
 package com.example.task1bluering.Entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
-
+import java.sql.Date;
 import java.util.Objects;
 
-
-//import java.util.Date;
-
-
-@Data
+@Setter
+@Getter
 @Entity
 @Table(name = "users", schema = "internship", catalog = "")
 public class UsersEntity {
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id@Column(name = "userId")
-    private Integer userId;
-
+    @Id@Column(name = "UserId")
+    private int userId;
     @Basic@Column(name = "usernames")
     private String usernames;
-
-
     @Basic@Column(name = "password")
     private String password;
-
     @Basic@Column(name = "dateofbirth")
     private String dateofbirth;
-
 
 }

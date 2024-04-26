@@ -2,13 +2,11 @@ package com.example.task1bluering.Controller;
 
 import com.example.task1bluering.DTO.UsersDTO;
 import com.example.task1bluering.Entity.UsersEntity;
-import com.example.task1bluering.Repository.Repository1;
 import com.example.task1bluering.Service.UsersService;
 import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ejb.DuplicateKeyException;
 import java.util.List;
 import java.util.Map;
 
