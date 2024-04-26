@@ -5,7 +5,10 @@ import com.example.task1bluering.Entity.UsersEntity;
 import com.example.task1bluering.Service.UsersService;
 import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
 
 import java.util.List;
 import java.util.Map;
@@ -54,11 +57,17 @@ public class UsersController {
 //        }
 //    }
 
+
+
+
     @GetMapping("/{userId}")
     public UsersDTO getOneUser(@PathVariable Integer userId) {
-        return usersService.getOneUser(userId);
+        UsersDTO userDTO = usersService.getOneUser(userId);
+        if (userDTO == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
+        }
+        return userDTO;
     }
-
 
 
     @DeleteMapping("/{userId}")
